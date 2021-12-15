@@ -1,0 +1,9 @@
+Started by user [8mha:////4CUHpSR7AbK3ldjb5STFot/TxkxhEs9svI+9bBvB3ZkFAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgZe/dLi1CL9ksS8zOKMRAB9r7+wwgAAAA==[0mTanisha Bharol
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/Deploy_on_kubernetes_CD
+SSH: Connecting from host [ip-172-31-43-136.ap-south-1.compute.internal]
+SSH: Connecting with configuration [ansible-server] ...
+SSH: EXEC: completed after 8,414 ms
+SSH: Disconnecting configuration [ansible-server] ...
+SSH: Transferred 0 file(s)
+Finished: SUCCESS
