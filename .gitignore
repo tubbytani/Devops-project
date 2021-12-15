@@ -1,1 +1,2 @@
-jenkins/jobs/*/builds
+/jenkins/jobs/*/builds
+/docker/*
