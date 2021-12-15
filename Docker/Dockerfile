@@ -1,0 +1,5 @@
+FROM tomcat:latest
+MAINTAINER Tanisha
+RUN mv /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps/
+#COPY /home/dockeradmin/dockeradmin/*  /usr/local/tomcat/webapps/
+COPY webapp.war /usr/local/tomcat/webapps
