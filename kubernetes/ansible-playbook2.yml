@@ -1,0 +1,16 @@
+---
+- hosts: ansible-server
+  become: true
+  tasks:
+  - name: create docker image using war file
+    command: docker build -t ansible-warfile-image:latest .
+    args: 
+      chdir: /opt/kubernetes
+  - name: create tag to image
+    command: docker tag ansible-warfile-image:latest tubbytani/ansible-warfile-image:latest
+  - name: push image to dockerhub
+    command: docker push tubbytani/ansible-warfile-image:latest
+  - name: remove images from ansible-server
+    command: docker rmi ansible-warfile-image:latest tubbytani/ansible-warfile-image:latest
+    ignore_errors: yes
+    

@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+  tasks: 
+  - name: stop if we have old docker container
+    command: docker stop ansible-warfile-container
+    ignore_errors: yes
+  - name: remove stopped docker container
+    command: docker rm ansible-warfile-container
+    ignore_errors: yes                                            
+  - name: remove current docker image
+    command: docker rmi tubbytani/ansible-warfile-image:latest
+    ignore_errors: yes
+  - name: pull image from dockerhub
+    command: docker pull tubbytani/ansible-warfile-image:latest
+  - name: create container using  ansible-warfile-image
+    command: docker run -d --name ansible-warfile-container -p 8080:8080 tubbytani/ansible-warfile-image:latest

@@ -1,0 +1,18 @@
+- hosts: all
+  become: true
+  tasks: 
+  - name: stop if we have old docker container
+    command: docker stop ansible-warfile-container
+    ignore_errors: yes
+  - name: remove stopped docker container
+    command: docker rm ansible-warfile-container
+    ignore_errors: yes                                            
+  - name: remove current docker image
+    command: docker rmi ansible-warfile-image
+    ignore_errors: yes
+  - name: build docker image using war file
+    command: docker build -t ansible-warfile-image . 
+    args:
+            chdir: "/opt/docker"
+  - name: create container using  ansible-warfile-image
+    command: docker run -d --name ansible-warfile-container -p 8080:8080 ansible-warfile-image 
